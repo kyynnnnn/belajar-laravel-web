@@ -36,4 +36,11 @@ class DetailUser extends Model
     {
         return $this->belongsTo('App/Models/User', 'users_id', 'id');
     }
+
+
+    // one to many
+    public function experience_user()
+    {
+        return $this->hasMany('App\Models\ExperienceUser', 'detail_user_id');
+    }
 }

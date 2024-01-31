@@ -44,4 +44,15 @@ class Order extends Model
     {
         return $this->belongsTo('App/Models/User', 'freelancer_id', 'id');
     }
+
+    // one to many
+    public function service()
+    {
+        return $this->belongsTo('App/Models/Service', 'service_id', 'id');
+    }
+
+    public function order_status()
+    {
+        return $this->belongsTo('App/Models/Order', 'order_status_id', 'id');
+    }
 }
